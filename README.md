@@ -1,11 +1,14 @@
-/*
 *assinput:联想输入
+
 *by:　   zhe-he
+
 *e-mail:    hezhe@jiaju.com
+
 *人有多懒，思想就有多远
+
 *version: 1.0
+
 *last-time:2015-7-22
-*
 
     完整模式:
     $(ele).Assinput({
