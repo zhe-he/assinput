@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>联想输入</title>
+<style type="text/css">
+*{margin: 0; padding: 0}
+input{
+    width: 178px;
+    height: 30px;
+    padding:0 10px;
+    font-size: 16px;
+}
+div{
+    position: relative;
+    margin: 10px;
+}
+ul{
+    z-index: 10;
+    position: absolute;
+    display: none;
+    width: 200px;
+    background-color: #fff;
+    text-indent: 10px;
+    border: 1px solid #ababab;
+    max-height: 150px;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+ul li{
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 30px;
+}
+ul li:hover{
+    font-size: 20px;
+    color: #fff;
+    background-color: #ccc;
+}
+
+</style>
+<script src="http://static.jiaju.com/jiaju/com/js/dojquery-z-min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+    <div id="hz1">
+        <input type="text" name="" placeholder="请输入城市" />
+        <input type="hidden" name="" value="">
+        <ul></ul>
+    </div>
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <div id="hz2">
+        <input type="text" name="" placeholder="请输入城市" />
+        <input type="hidden" name="" value="">
+        <ul></ul>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    详细见 <a href="main.js" target="_blank">main.js </a>
+    <script type="text/javascript">
+    $(function (){
+        //可处理的数据类型
+
+        //format:easy
+        var data1 = {
+            "dl":"大连","bj":"北京","tj":"天津","sj":"石家庄","ts":"唐山","lf":"廊坊","hd":"邯郸","bd":"保定","ty":"太原","jc":"晋城","sh":"上海","nj":"南京","cz":"常州","wx":"无锡","nb":"宁波","hf":"合肥","fz":"福州","xm":"厦门","sd":"济南","qd":"青岛","zb":"淄博","hn":"郑州","wh":"武汉","sz":"深圳","dg":"东莞","nn":"南宁","cd":"成都","yn":"昆明","sx":"西安","xj":"乌鲁木齐","cj":"昌吉","jy":"江阴","tb":"泰州","dy":"东营","afh":"阿富汗","xly":"叙利亚","ks":"昆山"
+        };
+        //format:normal
+        var data2 = [
+            {"dl":"大连"},{"bj":"北京"},{"tj":"天津"},{"sj":"石家庄"},{"ts":"唐山"},{"lf":"廊坊"},{"hd":"邯郸"},{"bd":"保定"},{"ty":"太原"},{"jc":"晋城"},{"sh":"上海"},{"nj":"南京"},{"cz":"常州"},{"wx":"无锡"},{"nb":"宁波"},{"hf":"合肥"},{"fz":"福州"},{"xm":"厦门"},{"sd":"济南"},{"qd":"青岛"},{"zb":"淄博"},{"hn":"郑州"},{"wh":"武汉"},{"sz":"深圳"},{"dg":"东莞"},{"nn":"南宁"},{"cd":"成都"},{"yn":"昆明"},{"sx":"西安"},{"xj":"乌鲁木齐"},{"cj":"昌吉"},{"jy":"江阴"},{"tb":"泰州"},{"dy":"东营"},{"afh":"阿富汗"},{"xly":"叙利亚"},{"ks":"昆山"}
+        ];
+        //format:hard
+        var data3 = [
+            {"code":"dl","name":"大连"},{"code":"bj","name":"北京"},{"code":"tj","name":"天津"},{"code":"sj","name":"石家庄"},{"code":"ts","name":"唐山"},{"code":"lf","name":"廊坊"},{"code":"hd","name":"邯郸"},{"code":"bd","name":"保定"},{"code":"ty","name":"太原"},{"code":"jc","name":"晋城"},{"code":"sh","name":"上海"},{"code":"nj","name":"南京"},{"code":"cz","name":"常州"},{"code":"wx","name":"无锡"},{"code":"nb","name":"宁波"},{"code":"hf","name":"合肥"},{"code":"fz","name":"福州"},{"code":"xm","name":"厦门"},{"code":"sd","name":"济南"},{"code":"qd","name":"青岛"},{"code":"zb","name":"淄博"},{"code":"hn","name":"郑州"},{"code":"wh","name":"武汉"},{"code":"sz","name":"深圳"},{"code":"dg","name":"东莞"},{"code":"nn","name":"南宁"},{"code":"cd","name":"成都"},{"code":"yn","name":"昆明"},{"code":"sx","name":"西安"},{"code":"xj","name":"乌鲁木齐"},{"code":"cj","name":"昌吉"},{"code":"jy","name":"江阴"},{"code":"tb","name":"泰州"},{"code":"dy","name":"东营"},{"code":"afh","name":"阿富汗"},{"code":"xly","name":"叙利亚"},{"code":"ks","name":"昆山"}
+        ];
+
+        $('#hz1').Assinput({data: data3});
+
+
+        //因为请求的接口是模拟的，所以数据不会变
+        $('#hz2').Assinput({
+            data:   'data.2.data',
+            keyword:    'k',
+            ajax:   {
+                url:    'test.txt',
+                cache:  false,
+                data:   {
+                    '固定参数1': '1',
+                    '固定参数2': '2',
+                    '固定参数3': '3'
+                },
+                //dataType:   'json',
+                error:  function (msg){
+                    console.log(msg)
+                }
+            } 
+        })
+    })
+    </script>
+</body>
+</html>
